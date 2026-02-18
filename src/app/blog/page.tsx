@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 const blogPosts = [
   {
@@ -129,20 +130,7 @@ export default function BlogPage() {
 
       {/* Newsletter Section */}
       <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">Stay Updated</h2>
-          <p className="text-gray-600 mb-8">Subscribe to get notified about new blog posts and updates</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 flex-1 max-w-md"
-            />
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-              Subscribe
-            </button>
-          </div>
-        </div>
+        <NewsletterForm />
       </div>
 
       {/* Footer */}

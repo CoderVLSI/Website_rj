@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CommentForm } from "@/components/CommentForm";
+import { ShareButtons } from "@/components/ShareButtons";
 
 const blogPosts: { [key: string]: { title: string; content: string[]; category: string; date: string; gradient: string } } = {
   "1": {
@@ -174,20 +176,7 @@ export default function BlogPost({ params }: { params: { id: string } }) {
             </div>
 
             {/* Share Section */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <h3 className="text-xl font-bold mb-4">Share this post</h3>
-              <div className="flex gap-4">
-                <button className="px-6 py-2 bg-blue-500 text-white rounded-full font-semibold hover:bg-blue-600 transition-colors">
-                  Facebook
-                </button>
-                <button className="px-6 py-2 bg-sky-500 text-white rounded-full font-semibold hover:bg-sky-600 transition-colors">
-                  Twitter
-                </button>
-                <button className="px-6 py-2 bg-green-500 text-white rounded-full font-semibold hover:bg-green-600 transition-colors">
-                  WhatsApp
-                </button>
-              </div>
-            </div>
+            <ShareButtons />
 
             {/* Comments Section */}
             <div className="mt-12 pt-8 border-t border-gray-200">
@@ -217,24 +206,7 @@ export default function BlogPost({ params }: { params: { id: string } }) {
               </div>
 
               {/* Comment Form */}
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold mb-4">Leave a Comment</h4>
-                <div className="space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  />
-                  <textarea
-                    placeholder="Your Comment"
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  ></textarea>
-                  <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
-                    Post Comment
-                  </button>
-                </div>
-              </div>
+              <CommentForm />
             </div>
           </div>
         </div>
